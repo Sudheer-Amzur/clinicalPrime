@@ -1,3 +1,35 @@
-<p>
-  carrier-rule-config works very fine!
-</p>
+<div>
+   <form [formGroup]="CRCform"> 
+    <div >
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="masterCC">Master Carrier Code</label>
+            <p-dropdown [options]="cars" formControlName="mcc"  [style]="{'width':'100%'}" filter="true" id="masterCC">              
+           </p-dropdown>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="carrierGp">Carrier Group</label>
+            <p-dropdown [options]="cars" formControlName="carrierGp"  [style]="{'width':'100%'}" filter="true" id="masterCC">              
+            </p-dropdown>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="commonCC">Carrier Group</label>
+            <p-dropdown [options]="cars" formControlName="commonCG"  [style]="{'width':'100%'}" filter="true" id="masterCC">              
+            </p-dropdown>
+          </div>
+        </div>
+        <div class="col-md-3" style="padding-top: 25px;">
+          
+          <button pButton type="button" label="Search"></button>
+          <button pButton type="button" label="Cancel"></button>
+        </div>
+      </div>
+    </div>
+   </form> 
+   {{CRCform.value | json}}
+</div>
