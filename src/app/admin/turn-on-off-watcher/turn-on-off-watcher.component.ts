@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class TurnOnOffWatcherComponent implements OnInit {
 
   constructor() { }
+  IsRxtranswatcher :boolean = false;
+  IsRulesEngineWatcher :boolean = false;
+  IsWorkFlowWatcher :boolean = false;
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
 }
