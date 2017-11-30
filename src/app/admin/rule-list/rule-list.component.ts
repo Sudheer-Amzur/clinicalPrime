@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RuleList} from './rule-list';
+import { MessageService } from '../../shared/message.service';
 
 @Component({
   selector: 'app-rule-list',
@@ -12,10 +13,10 @@ export class RuleListComponent implements OnInit {
    Rules: RuleList[]
       cols: any[];
       Listdata:any[];
-  constructor() { }
+  constructor(private message:MessageService) { }
 
   ngOnInit() {
-  
+    this.message.changeMessage("Rule-List");
   this.cols = [
             {field: 'RullNo',header:'RullNo'},
             {field: 'Name', header: 'Name'},

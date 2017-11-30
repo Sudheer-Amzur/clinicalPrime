@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MessageService } from '../../shared/message.service';
 @Component({
   selector: 'app-turn-on-off-watcher',
   templateUrl: './turn-on-off-watcher.component.html',
@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TurnOnOffWatcherComponent implements OnInit {
 
-  constructor() { }
-  IsRxtranswatcher :boolean = false;
-  IsRulesEngineWatcher :boolean = false;
-  IsWorkFlowWatcher :boolean = false;
+  constructor(private message:MessageService) { }
+  IsRxtranswatcher: boolean = false;
+  IsRulesEngineWatcher: boolean = false;
+  IsWorkFlowWatcher: boolean = false;
 
-  ngOnInit() {    
+  ngOnInit() {
+    this.message.changeMessage("Turn-On/Off-Watcher settings");
   }
 
 }

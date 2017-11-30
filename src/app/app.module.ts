@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {AdminModule} from './admin/admin.module';
 import {BrowserAnimationsModule}from '@angular/platform-browser/animations'
-
+import {enableProdMode} from '@angular/core';
 
 
 
@@ -25,5 +25,7 @@ import {BrowserAnimationsModule}from '@angular/platform-browser/animations'
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
+enableProdMode();
