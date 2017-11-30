@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path:'',redirectTo:'rule-list',pathMatch:'full'},
-  {path:'CRC',redirectTo:'CRC'}
+  {path:'CRC',redirectTo:'CRC'},
+  {path:'TWC',redirectTo:'TWC'}
 ];
 
 @NgModule({
