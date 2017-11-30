@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RuleList} from './rule-list';
+import{Router,ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-rule-list',
@@ -12,7 +13,7 @@ export class RuleListComponent implements OnInit {
    Rules: RuleList[]
       cols: any[];
       Listdata:any[];
-  constructor() { }
+  constructor( public router:Router) { }
 
   ngOnInit() {
   
@@ -58,4 +59,9 @@ export class RuleListComponent implements OnInit {
 
       
 }
+     GotoRulesConfiguration()
+              {
+                this.router.navigateByUrl('/create-rule');
+                
+              }     
 }
