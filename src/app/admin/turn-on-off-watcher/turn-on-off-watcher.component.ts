@@ -8,9 +8,9 @@ import { MessageService } from '../../shared/message.service';
 export class TurnOnOffWatcherComponent implements OnInit {
 
   constructor(private message:MessageService) { }
-  IsRxtranswatcher: boolean = false;
-  IsRulesEngineWatcher: boolean = false;
-  IsWorkFlowWatcher: boolean = false;
+  IsRxtranswatcher: boolean = true;
+  IsRulesEngineWatcher: boolean = true;
+  IsWorkFlowWatcher: boolean = true;
 
   ngOnInit() {
     this.message.changeMessage("Turn-On/Off-Watcher settings");
