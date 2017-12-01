@@ -8,6 +8,7 @@ import {MenubarModule,MenuItem} from 'primeng/primeng';
 import {SidebarModule} from 'primeng/primeng'; 
 import { HeaderComponent } from './header/header.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
+import {MessageService} from './message.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { LeftMenuComponent } from './left-menu/left-menu.component';
     SidebarModule
   ],
   declarations: [HeaderComponent, LeftMenuComponent],
-  exports:[HeaderComponent,LeftMenuComponent]
+  exports:[HeaderComponent,LeftMenuComponent],
+  providers:[MessageService]
 })
 export class SharedModule { }

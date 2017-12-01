@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
- 
+ import{MessageService} from '../message.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor() { }
-  
-  ngOnInit() {
-  }
+  constructor(private message:MessageService) {
+    
 
+   }
+  Message:string;
+  ngOnInit() {
+   this.message.currentMessage.subscribe(message => this.Message = message);
+  }
+  
 }

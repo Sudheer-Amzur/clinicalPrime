@@ -11,14 +11,16 @@ import {DropdownModule} from 'primeng/primeng';
  
 import {ButtonModule} from 'primeng/primeng';
 import {InputTextModule} from 'primeng/primeng';
+import {InputSwitchModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
-import { CarrierRuleConfigComponent } from './carrier-rule-config/carrier-rule-config.component'; 
+import { CarrierRuleConfigComponent } from './carrier-rule-config/carrier-rule-config.component';
+import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-watcher.component'; 
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
-    AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule
+    AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule
   ],
-  declarations: [RuleListComponent, CarrierRuleConfigComponent],
+  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent],
   exports:[RuleListComponent]
 })
 export class AdminModule { }

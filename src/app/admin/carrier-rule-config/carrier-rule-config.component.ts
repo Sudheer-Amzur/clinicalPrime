@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormControl,FormArray,FormGroup} from '@angular/forms';
+import { MessageService } from '../../shared/message.service';
 
 @Component({
   selector: 'app-carrier-rule-config',
@@ -11,10 +12,6 @@ export class CarrierRuleConfigComponent implements OnInit {
  // constructor() { }
  CRCform:FormGroup;
 
-  ngOnInit() {
-    this.createForm();
-  }
-
       cities: any[];
   
       selectedCity: string;
@@ -25,7 +22,7 @@ export class CarrierRuleConfigComponent implements OnInit {
   
       selectedCar2: string = 'BMW';
   
-      constructor(private fb:FormBuilder) {
+      constructor(private fb:FormBuilder,private message:MessageService) {
           this.cities = [
               {name: 'New York', code: 'NY'},
               {name: 'Rome', code: 'RM'},
@@ -46,6 +43,11 @@ export class CarrierRuleConfigComponent implements OnInit {
               {label: 'VW', value: 'VW'}
               
           ];
+          this.message.changeMessage("Carrier-Rule-Config");
+      }
+      ngOnInit() {
+        this.createForm();
+        
       }
       createForm() {
         this.CRCform = this.fb.group({
@@ -53,6 +55,7 @@ export class CarrierRuleConfigComponent implements OnInit {
           carrierGp:'',
           commonCG:''
         });
+        
       }
 
 }
