@@ -13,10 +13,10 @@ export class RuleListComponent implements OnInit {
    Rules: RuleList[]
       cols: any[];
       Listdata:any[];
-  constructor(private message:MessageService) { }
+  constructor(private message:MessageService) {this.message.changeMessage("Rule-List"); }
 
   ngOnInit() {
-    this.message.changeMessage("Rule-List");
+    
   this.cols = [
             {field: 'RullNo',header:'RullNo'},
             {field: 'Name', header: 'Name'},
