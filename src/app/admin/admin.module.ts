@@ -14,13 +14,15 @@ import {InputTextModule} from 'primeng/primeng';
 import {InputSwitchModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
 import { CarrierRuleConfigComponent } from './carrier-rule-config/carrier-rule-config.component';
-import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-watcher.component'; 
+import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-watcher.component';
+import { ClaimantHistoryComponent } from './claimant-history/claimant-history.component';
+import { ClaimHistoryComponent } from './claim-history/claim-history.component'; 
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule
   ],
-  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent],
+  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, ClaimantHistoryComponent, ClaimHistoryComponent],
   exports:[RuleListComponent]
 })
 export class AdminModule { }

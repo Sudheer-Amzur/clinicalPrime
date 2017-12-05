@@ -1,0 +1,14 @@
+<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+  <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+  <input #gb type="text" pInputText size="30" placeholder="Serach Text">
+</div>
+<div class="content-section implementation">
+  <p-dataTable [value]="cars" expandableRows="true" [rows]="5" [totalRecords]="30" [paginator]="true" [rowsPerPageOptions]="[5,10,20]"
+    sortMode="multiple" [globalFilter]="gb" [resizableColumns]="true">
+    <p-column expander="true" styleClass="col-icon" [style]="{'width':'2%'}"></p-column>
+    <p-column field="ClaimID" header="ClaimID" [sortable]="true"></p-column>
+    <p-column field="ClaimNumber" header="Claim Number" [sortable]="true"></p-column>
+    <p-column field="ClaimType" header="Claim Type" [sortable]="true"></p-column>
+    <p-column field="SOJ" header="SOJ" [sortable]="true"></p-column>
+  </p-dataTable>
+</div>
