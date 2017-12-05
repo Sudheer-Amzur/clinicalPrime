@@ -18,11 +18,12 @@ import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-wat
 import { ClaimantHistoryComponent } from './claimant-history/claimant-history.component';
 import { ClaimDetailsComponent } from './claim-details/claim-details.component'; 
 import { CreateRuleComponent } from './create-rule/create-rule.component'; 
+import {MultiSelectModule} from 'primeng/primeng';
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule
-    ,StepsModule,AccordionModule,CalendarModule,InputSwitchModule
+      , StepsModule, AccordionModule, CalendarModule, InputSwitchModule, MultiSelectModule
   ],
   declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, CreateRuleComponent, ClaimantHistoryComponent, ClaimDetailsComponent],
   exports:[RuleListComponent]

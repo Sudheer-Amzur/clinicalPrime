@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormControl,FormArray,FormGroup} from '@angular/forms';
 import { MessageService } from '../../shared/message.service';
+import { element } from 'protractor';
+import {ICarData} from './car-list';
+
 
 @Component({
   selector: 'app-carrier-rule-config',
@@ -19,8 +22,11 @@ export class CarrierRuleConfigComponent implements OnInit {
       cars: any[];
   
       selectedCar: string;
-  
+      selectedCars3:any[];
       selectedCar2: string = 'BMW';
+      selectedCities:any[];
+      carData:any[];
+      gridData:ICarData[];
   
       constructor(private fb:FormBuilder,private message:MessageService) {
           this.cities = [
@@ -53,9 +59,32 @@ export class CarrierRuleConfigComponent implements OnInit {
         this.CRCform = this.fb.group({
           mcc: 'BMW',  
           carrierGp:'',
-          commonCG:''
+          commonCG:'',
+          selectedCities:this.fb.array([]),
+          carData:this.fb.array([])
         });
         
       }
+      onRowSelect(event) {  
+        debugger;     
+        console.log(event.data.vin);
+        this.CRCform.value.carData = this.selectedCars3;         
+    }
+
+    onChangeofCities(event,car:any) {
+      debugger;     
+      let index = this.findSelectedCarIndex(car);  
+      this.CRCform.value.carData[index].cityData = []; 
+      this.CRCform.value.carData[index].cityData=event.value.map(item => item.code);   
+  }
+
+  findSelectedCarIndex(car:any): number {
+    return this.CRCform.value.carData.findIndex(item => item.vin === car.vin)
+}
+
+    onRowUnselect(event) {
+      console.log(event.data.vin);
+    }
+
 
 }
