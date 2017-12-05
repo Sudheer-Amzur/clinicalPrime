@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { MessageService } from '../../shared/message.service';
 import { ClaimDetails } from './claim-details';
 @Component({
@@ -7,6 +7,7 @@ import { ClaimDetails } from './claim-details';
   styleUrls: ['./claim-details.component.css']
 })
 export class ClaimDetailsComponent implements OnInit {
+  
   claims: ClaimDetails[];
 
   cols: any[];
