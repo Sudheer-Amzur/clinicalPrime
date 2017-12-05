@@ -12,11 +12,12 @@ import {DropdownModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {InputTextModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
+import {MultiSelectModule} from 'primeng/primeng';
 import { CarrierRuleConfigComponent } from './carrier-rule-config/carrier-rule-config.component'; 
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
-    AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule
+    AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,MultiSelectModule
   ],
   declarations: [RuleListComponent, CarrierRuleConfigComponent],
   exports:[RuleListComponent]
