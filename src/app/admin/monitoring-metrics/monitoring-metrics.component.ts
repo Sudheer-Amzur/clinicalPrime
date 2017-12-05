@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MessageService} from '../../shared/message.service';
 import {FormBuilder,FormControl,FormArray,FormGroup} from '@angular/forms';
-
+import {Chart} from 'chart.js';
 @Component({
   selector: 'app-monitoring-metrics',
   templateUrl: './monitoring-metrics.component.html',
@@ -15,12 +15,33 @@ export class MonitoringMetricsComponent implements OnInit {
   selectedCar2: string = 'BMW';
   fromdt: Date;
   enddt:Date;
+  data: any;
+  options: any;barchart:any;
   constructor(private message:MessageService,private fb:FormBuilder) { 
     this.message.changeMessage('Monitoring Metrics');
     
   }
 
-  ngOnInit() {    
+  ngOnInit() { 
+    this.data = {
+      labels: ['A','B','C'],
+      datasets: [
+          {
+              data: [300, 50, 100],
+              backgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ],
+              hoverBackgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ]
+          }]
+        
+      };
+     
    
     this.cars = [
       {label: 'Audi', value: 'Audi'},

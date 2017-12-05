@@ -14,13 +14,13 @@
               <label for="fromDate">From Date</label>
               <!-- <p-dropdown [options]="cars" formControlName="fromDate"   filter="true" id="fromDate">              
               </p-dropdown> -->
-              <p-calendar [(ngModel)]="fromdt" [showIcon]="true" formControlName="fromDate" id="fromDate"  [style]="{'width':'100%'}"></p-calendar>
+              <p-calendar [(ngModel)]="fromdt" [showIcon]="true" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" formControlName="fromDate" id="fromDate"  [style]="{'width':'100%'}"></p-calendar>
             </div>
           </div>
           <div class="col-md-3">
             <div class="form-group">
               <label for="commonCC">End Date</label>
-              <p-calendar class="uidate" [(ngModel)]="enddt" [showIcon]="true" formControlName="endDate" id="fromDate"  [style]="{'width':'100%'}"></p-calendar>
+              <p-calendar class="uidate" [(ngModel)]="enddt" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true" formControlName="endDate" id="fromDate"  [style]="{'width':'100%'}"></p-calendar>
             </div>
           </div>
          
@@ -51,6 +51,11 @@
          
          <button pButton type="button" label="Search"></button>
          <button pButton type="button" label="Cancel"></button>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-4">
+        <p-chart type="pie" [data]="data" ></p-chart>
        </div>
      </div>
    </div>

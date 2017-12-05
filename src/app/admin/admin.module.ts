@@ -7,6 +7,7 @@ import { RuleListComponent } from './rule-list/rule-list.component';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
 import {PaginatorModule} from 'primeng/primeng';
 import {DropdownModule} from 'primeng/primeng';
+import {ChartModule} from 'primeng/primeng';
 
  
 import {ButtonModule} from 'primeng/primeng';
@@ -20,7 +21,8 @@ import { MonitoringMetricsComponent } from './monitoring-metrics/monitoring-metr
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
-    AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule,CalendarModule
+    AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule,CalendarModule,
+    ChartModule
   ],
   declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, MonitoringMetricsComponent],
   exports:[RuleListComponent]
