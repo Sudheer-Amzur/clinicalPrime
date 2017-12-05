@@ -38,10 +38,23 @@ export class MonitoringMetricsComponent implements OnInit {
                   "#36A2EB",
                   "#FFCE56"
               ]
-          }]
-        
+          }]           
       };
-     
+      this.options = {
+        title: {
+            display: true,
+            text: 'Pie chart',
+            fontSize: 16
+        },
+        legend: {
+            position: 'left'
+            
+        },
+        legendCallback: function(chart) {
+          debugger;
+          return chart.generateLegend('<h1>hh</h1>');
+      }
+    };
    
     this.cars = [
       {label: 'Audi', value: 'Audi'},
@@ -74,4 +87,5 @@ this.createForm();
       endDate:''
     });
   }
+   
 }
