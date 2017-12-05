@@ -14,7 +14,9 @@ import {InputTextModule} from 'primeng/primeng';
 import {InputSwitchModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
 import { CarrierRuleConfigComponent } from './carrier-rule-config/carrier-rule-config.component';
-import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-watcher.component'; 
+import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-watcher.component';
+import { ClaimantHistoryComponent } from './claimant-history/claimant-history.component';
+import { ClaimDetailsComponent } from './claim-details/claim-details.component'; 
 import { CreateRuleComponent } from './create-rule/create-rule.component'; 
 @NgModule({
   imports: [
@@ -22,7 +24,7 @@ import { CreateRuleComponent } from './create-rule/create-rule.component';
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule
     ,StepsModule,AccordionModule,CalendarModule,InputSwitchModule
   ],
-  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent,CreateRuleComponent],
+  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, CreateRuleComponent, ClaimantHistoryComponent, ClaimDetailsComponent],
   exports:[RuleListComponent]
  
 })
