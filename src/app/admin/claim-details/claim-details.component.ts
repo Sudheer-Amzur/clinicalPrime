@@ -7,11 +7,7 @@ import { ClaimDetails } from './claim-details';
   styleUrls: ['./claim-details.component.css']
 })
 export class ClaimDetailsComponent implements OnInit {
-  @Output() onSelectClaim = new EventEmitter<string>();
-  @Input() public category: Object;
-
-  
-  private data: Object[];
+  @Input() rowdt : string;
   claims: ClaimDetails[];
 
   cols: any[];
@@ -23,6 +19,7 @@ export class ClaimDetailsComponent implements OnInit {
   constructor(private message: MessageService) { }
 
   ngOnInit() {
+    
     this.cols = [
       { field: 'ClaimID', header: 'ClaimID' },
       { field: 'ClaimNumber', header: 'Claim Number' },
@@ -42,13 +39,10 @@ export class ClaimDetailsComponent implements OnInit {
       { "ClaimID": 10, "ClaimNumber": 20122456890, "ClaimType": "W", "SOJ": "FL" },
       { "ClaimID": 11, "ClaimNumber": 20122456810, "ClaimType": "W", "SOJ": "FL" },
 
-    ]
+    ].filter(test=>{
+      return test.ClaimID==this.rowdt["ClaimantID"]
+    })
     this.message.changeMessage("Claim Details");
-  
-}
- onClick(e: any) {
-    let ClaimId = "5";
-    this.onSelectClaim.emit(ClaimId);
   }
 
 }

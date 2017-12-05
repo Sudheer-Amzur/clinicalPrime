@@ -38,10 +38,9 @@
     <p-column field="FirstName" header="FirstName" [sortable]="true"></p-column>
     <p-column field="LastName" header="LastName" [sortable]="true"></p-column>
     <ng-template let-car pTemplate="rowexpansion" let-rowData  >
-      {{rowData['ClaimantID']}}
       <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px">
         <div class="ui-grid-row">
-         <claim-details [category]="rowData" (onSelectClaim)='getClaimantID($event)'></claim-details>
+         <claim-details [rowdt]="rowData" (onSelectClaim)='getClaimantID($event)'></claim-details>
         </div>
       </div>
     </ng-template>
