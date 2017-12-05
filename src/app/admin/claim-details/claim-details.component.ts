@@ -7,7 +7,11 @@ import { ClaimDetails } from './claim-details';
   styleUrls: ['./claim-details.component.css']
 })
 export class ClaimDetailsComponent implements OnInit {
+  @Output() onSelectClaim = new EventEmitter<string>();
+  @Input() public category: Object;
+
   
+  private data: Object[];
   claims: ClaimDetails[];
 
   cols: any[];
@@ -40,6 +44,11 @@ export class ClaimDetailsComponent implements OnInit {
 
     ]
     this.message.changeMessage("Claim Details");
+  
+}
+ onClick(e: any) {
+    let ClaimId = "5";
+    this.onSelectClaim.emit(ClaimId);
   }
 
 }
