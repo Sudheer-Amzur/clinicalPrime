@@ -1,4 +1,4 @@
-export interface ClaimHistory {
+export interface ClaimDetails {
     ClaimID?;
     ClaimNumber?;
     ClaimType?;

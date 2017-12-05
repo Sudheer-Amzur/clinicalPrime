@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../../shared/message.service';
-import { ClaimHistory } from './claim-history';
+import { ClaimDetails } from './claim-details';
 @Component({
-  selector: 'claim-history',
-  templateUrl: './claim-history.component.html',
-  styleUrls: ['./claim-history.component.css']
+  selector: 'claim-details',
+  templateUrl: './claim-details.component.html',
+  styleUrls: ['./claim-details.component.css']
 })
-export class ClaimHistoryComponent implements OnInit {
-  claims: ClaimHistory[];
+export class ClaimDetailsComponent implements OnInit {
+  claims: ClaimDetails[];
 
   cols: any[];
 
-  selectedClaim: ClaimHistory;
+  selectedClaim: ClaimDetails;
 
   dialogVisible: boolean;
 
@@ -38,7 +38,7 @@ export class ClaimHistoryComponent implements OnInit {
       { "ClaimID": 11, "ClaimNumber": 20122456810, "ClaimType": "W", "SOJ": "FL" },
 
     ]
-    this.message.changeMessage("Claim History");
+    this.message.changeMessage("Claim Details");
   }
 
 }
