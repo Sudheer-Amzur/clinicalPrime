@@ -10,18 +10,19 @@
 <div class="row">
   <div class="col-md-12">
       <div class="col-md-2"><label><b>Claimant FirstName:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text1" placeholder="Claimant FirstName"></div>
+      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text3" placeholder="Claimant FirstName"></div>
       <div class="col-md-2"><label><b>Claim LastName:</b></label></div>
-      <div class="col-md-4"> <input id="input" type="text" size="50" pInputText [(ngModel)]="text2" placeholder="Claimant LastName"></div>
+      <div class="col-md-4"> <input id="input" type="text" size="50" pInputText [(ngModel)]="text4" placeholder="Claimant LastName"></div>
     </div>
 </div>
 <br/>
 <div class="row">
   <div class="col-md-12">
       <div class="col-md-2"><label><b>Claim Number:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text1" placeholder="Claim Number"></div>
+      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text5" placeholder="Claim Number"></div>
       <div class="col-md-2"><label><b>Claim Type:</b></label></div>
-      <div class="col-md-4"> <input id="input" type="text" size="50" pInputText [(ngModel)]="text2" placeholder="Claim Type"></div>
+      <div class="col-md-2"> <input id="input" type="text" size="30" pInputText [(ngModel)]="text6" placeholder="Claim Type"></div>
+      <div class="col-md-2"><button pButton type="button" label="Search"></button> </div>
     </div>
 </div>
 <br/>
@@ -30,16 +31,16 @@
   <input #gb type="text" pInputText size="30" placeholder="Serach Text">
 </div>
 <div class="content-section implementation">
-  <p-dataTable [value]="cars" expandableRows="true" [rows]="5" [totalRecords]="30" [paginator]="true" [rowsPerPageOptions]="[5,10,20]"
+  <p-dataTable [value]="claimants" expandableRows="true" [rows]="5" [totalRecords]="30" [paginator]="true" [rowsPerPageOptions]="[5,10,20]"
     sortMode="multiple" [globalFilter]="gb" [resizableColumns]="true">
     <p-column expander="true" styleClass="col-icon" [style]="{'width':'2%'}"></p-column>
     <p-column field="ClaimantID" header="ClaimantID" [sortable]="true"></p-column>
     <p-column field="FirstName" header="FirstName" [sortable]="true"></p-column>
     <p-column field="LastName" header="LastName" [sortable]="true"></p-column>
-    <ng-template let-car pTemplate="rowexpansion">
+    <ng-template let-car pTemplate="rowexpansion" let-rowData  >
       <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px">
         <div class="ui-grid-row">
-         <claim-details ></claim-details>
+         <claim-details [rowdt]="rowData" (onSelectClaim)='getClaimantID($event)'></claim-details>
         </div>
       </div>
     </ng-template>

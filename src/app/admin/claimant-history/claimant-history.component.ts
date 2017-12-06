@@ -7,7 +7,7 @@ import { ClaimantHistory } from './claimant-history';
   styleUrls: ['./claimant-history.component.css']
 })
 export class ClaimantHistoryComponent implements OnInit {
-  cars: ClaimantHistory[];
+  claimants: ClaimantHistory[];
 
   cols: any[];
 
@@ -23,7 +23,7 @@ export class ClaimantHistoryComponent implements OnInit {
       { field: 'FirstName', header: 'First Name' },
       { field: 'LastName', header: 'Last Name' }
     ];
-    this.cars = [
+    this.claimants = [
       { "ClaimantID": 1, "FirstName": "Rose", "LastName": "White" },
       { "ClaimantID": 2, "FirstName": "Chrys", "LastName": "White" },
       { "ClaimantID": 3, "FirstName": "Tulip", "LastName": "White" },
@@ -38,6 +38,10 @@ export class ClaimantHistoryComponent implements OnInit {
 
     ]
     this.message.changeMessage("Claimant History");
-  }
+
+ }
+ getClaimantID(claimId:number){
+  debugger;
+} 
 
 }
