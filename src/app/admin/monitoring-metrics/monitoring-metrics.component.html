@@ -1,0 +1,67 @@
+<div>
+  <form [formGroup]="MMform"> 
+   <div >
+      <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="trnasactionType">Transaction Type</label>
+              <p-dropdown [options]="cars" formControlName="transactionType"  [style]="{'width':'100%'}" filter="true" id="trnasactionType">              
+             </p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="fromDate">From Date</label>
+              <!-- <p-dropdown [options]="cars" formControlName="fromDate"   filter="true" id="fromDate">              
+              </p-dropdown> -->
+              <p-calendar [(ngModel)]="fromdt" [showIcon]="true" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" formControlName="fromDate" id="fromDate"  [style]="{'width':'100%'}"></p-calendar>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="commonCC">End Date</label>
+              <p-calendar class="uidate" [(ngModel)]="enddt" [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true" formControlName="endDate" id="fromDate"  [style]="{'width':'100%'}"></p-calendar>
+            </div>
+          </div>
+         
+        </div>
+     <div class="row">
+       <div class="col-md-3">
+         <div class="form-group">
+           <label for="masterCC">Master Carrier Code</label>
+           <p-dropdown [options]="cars" formControlName="mcc"  [style]="{'width':'100%'}" filter="true" id="masterCC">              
+          </p-dropdown>
+         </div>
+       </div>
+       <div class="col-md-3">
+         <div class="form-group">
+           <label for="carrierGp">Carrier Group</label>
+           <p-dropdown [options]="cars" formControlName="carrierGp"  [style]="{'width':'100%'}" filter="true" id="masterCC">              
+           </p-dropdown>
+         </div>
+       </div>
+       <div class="col-md-3">
+         <div class="form-group">
+           <label for="commonCC">Carrier Group</label>
+           <p-dropdown [options]="cars" formControlName="commonCG"  [style]="{'width':'100%'}" filter="true" id="masterCC">              
+           </p-dropdown>
+         </div>
+       </div>
+       <div class="col-md-3" style="padding-top: 25px;">
+         
+         <button pButton type="button" label="Search"></button>
+         <button pButton type="button" label="Cancel"></button>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-4">
+        <p-chart  #ch type="pie" [data]="data" [options]="options"   ></p-chart>
+       </div>
+       <div class="col-md-3">
+         
+       </div>
+     </div>
+   </div>
+  </form> 
+  <!-- {{MMform.value | json}} -->
+</div>

@@ -5,7 +5,8 @@ const routes: Routes = [
   {path:'',redirectTo:'rule-list',pathMatch:'full'},
   {path:'CRC',redirectTo:'CRC'},
   {path:'TWC',redirectTo:'TWC'},
-  {path:'create-rule',redirectTo:'create-rule'}
+  { path: 'create-rule', redirectTo: 'create-rule' },
+  { path: 'Mmetrics', redirectTo: 'Mmetrics' }
 ];
 
 @NgModule({

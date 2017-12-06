@@ -7,6 +7,9 @@ import { RuleListComponent } from './rule-list/rule-list.component';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
 import {PaginatorModule} from 'primeng/primeng';
 import {DropdownModule} from 'primeng/primeng';
+import {ChartModule} from 'primeng/primeng';
+
+ 
 import {StepsModule,MenuItem,AccordionModule} from 'primeng/primeng';
 import {CalendarModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
@@ -18,14 +21,15 @@ import { TurnOnOffWatcherComponent } from './turn-on-off-watcher/turn-on-off-wat
 import { ClaimantHistoryComponent } from './claimant-history/claimant-history.component';
 import { ClaimDetailsComponent } from './claim-details/claim-details.component'; 
 import { CreateRuleComponent } from './create-rule/create-rule.component'; 
-import {MultiSelectModule} from 'primeng/primeng';
+import { MultiSelectModule } from 'primeng/primeng';
+import { MonitoringMetricsComponent } from './monitoring-metrics/monitoring-metrics.component'; 
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule
-      , StepsModule, AccordionModule, CalendarModule, InputSwitchModule, MultiSelectModule
+      , StepsModule, AccordionModule, CalendarModule, InputSwitchModule, MultiSelectModule, ChartModule
   ],
-  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, CreateRuleComponent, ClaimantHistoryComponent, ClaimDetailsComponent],
+  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, CreateRuleComponent, ClaimantHistoryComponent, ClaimDetailsComponent, MonitoringMetricsComponent],
   exports:[RuleListComponent]
  
 })
