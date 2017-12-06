@@ -14,11 +14,11 @@
     <div class="col-md-12">
       <div class="col-md-2"> <label>Rule Validity From:</label></div>
       <div class="col-md-4  custom-input">
-        <p-calendar  [(ngModel)]="startDate" [monthNavigator]="true" name="startDate"  [yearNavigator]="true" yearRange="1800:2090" ></p-calendar>
+        <p-calendar  [(ngModel)]="startDate" [monthNavigator]="true" name="startDate"  [yearNavigator]="true" yearRange="1800:2090"placeholder="mm-dd-yyyy" ></p-calendar>
       </div>
        <div class="col-md-2"> <label>Rule Validity To:</label></div>
       <div class="col-md-4 custom-input">
-        <p-calendar [(ngModel)]="EndDate" [monthNavigator]="true"  [yearNavigator]="true" yearRange="1800:2090"></p-calendar>
+        <p-calendar [(ngModel)]="EndDate" [monthNavigator]="true"  [yearNavigator]="true" yearRange="1800:2090" placeholder="mm-dd-yyyy"></p-calendar>
       </div>
       
     </div>
@@ -37,7 +37,7 @@
     <p-footer>
       <div class="ui-dialog-buttonpane ui-helper-clearfix">
         <button type="button" style="float:right" pButton icon="fa-close" (click)="  GotoRulelistPage()" label="Cancel"></button>
-        <button type="button" style="float:right" pButton icon="fa-check" (click)="gotoStep1()"label="Next"></button>
+        <button type="button" style="float:right" pButton icon="fa fa-chevron-right" (click)="gotoStep1()"label="Next"></button>
 
       </div>
     </p-footer>
@@ -63,8 +63,9 @@
       <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
           <button type="button" style="float:right" pButton icon="fa-close" (click)=" GotoRulelistPage()" label="Delete"></button>
-          <button type="button" style="float:right" pButton icon="fa-check" (click)="gotoStep2()" label="Next"></button>
-          <button type="button" style="float:right" pButton icon="fa-Previous" (click)="gotostep0()" label="Previous"></button>
+          <button type="button" style="float:right" pButton icon="fa fa-chevron-right" (click)="gotoStep2()" label="Next"></button>
+          <button type="button" style="float:right" pButton icon="fa fa-chevron-left" (click)="gotostep0()" label="Previous"></button>
+           
         </div>
 
       </p-footer>
@@ -91,7 +92,7 @@
   <div class="ui-dialog-buttonpane ui-helper-clearfix">
     <button type="button" style="float:right" pButton icon="fa-close" (click)=" GotoRulelistPage()" label="Delete"></button>
     <button type="button" style="float:right" pButton icon="fa-check" (click)="gotoStep()" label="Save"></button>
-    <button type="button" style="float:right" pButton icon="fa-Previous" (click)="gotoStep1()" label="Previous"></button>
+    <button type="button" style="float:right" pButton icon="fa fa-chevron-left" (click)="gotoStep1()" label="Previous"></button>
   </div>
 
 </div>

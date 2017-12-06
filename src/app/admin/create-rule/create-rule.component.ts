@@ -16,6 +16,7 @@ export class CreateRuleComponent implements OnInit {
     public showPrevieInfo:boolean=false; 
     public isStep0finish:boolean=false;
     public isStep1finish:boolean=false;
+    checked2: boolean = true;
     items: MenuItem[];
     msgs: Message[] = [];
     
