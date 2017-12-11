@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MessageService} from './shared/message.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  pageName = '';
+  constructor(private service:MessageService){
+    this.service.currentPage.subscribe(test=> this.pageName=test);
+  }
 }
