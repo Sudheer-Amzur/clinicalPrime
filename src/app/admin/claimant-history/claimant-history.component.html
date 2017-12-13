@@ -1,34 +1,77 @@
 <div class="row">
   <div class="col-md-12">
-      <div class="col-md-2"><label><b>Claimant ID:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text1" placeholder="Claimant ID"></div>
-      <div class="col-md-2"><label><b>Claim ID:</b></label></div>
-      <div class="col-md-4"> <input id="input" type="text" size="50" pInputText [(ngModel)]="text2" placeholder="Claim ID"></div>
+    <div class="col-md-2">
+      <label>
+        <b>Claimant ID:</b>
+      </label>
     </div>
+    <div class="col-md-4">
+      <input id="input" type="text" size="50" pInputText [(ngModel)]="text1" placeholder="Claimant ID">
+    </div>
+    <div class="col-md-2">
+      <label>
+        <b>Claim ID:</b>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <input id="input" type="text" size="50" pInputText [(ngModel)]="text2" placeholder="Claim ID">
+    </div>
+  </div>
 </div>
 <br/>
 <div class="row">
   <div class="col-md-12">
-      <div class="col-md-2"><label><b>Claimant FirstName:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text3" placeholder="Claimant FirstName"></div>
-      <div class="col-md-2"><label><b>Claim LastName:</b></label></div>
-      <div class="col-md-4"> <input id="input" type="text" size="50" pInputText [(ngModel)]="text4" placeholder="Claimant LastName"></div>
+    <div class="col-md-2">
+      <label>
+        <b>Claimant FirstName:</b>
+      </label>
     </div>
+    <div class="col-md-4">
+      <input id="input" type="text" size="50" pInputText [(ngModel)]="text3" placeholder="Claimant FirstName">
+    </div>
+    <div class="col-md-2">
+      <label>
+        <b>Claim LastName:</b>
+      </label>
+    </div>
+    <div class="col-md-4">
+      <input id="input" type="text" size="50" pInputText [(ngModel)]="text4" placeholder="Claimant LastName">
+    </div>
+  </div>
 </div>
 <br/>
 <div class="row">
   <div class="col-md-12">
-      <div class="col-md-2"><label><b>Claim Number:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text5" placeholder="Claim Number"></div>
-      <div class="col-md-2"><label><b>Claim Type:</b></label></div>
-      <div class="col-md-2"> <input id="input" type="text" size="30" pInputText [(ngModel)]="text6" placeholder="Claim Type"></div>
-      <div class="col-md-2"><button pButton type="button" label="Search"></button> </div>
+    <div class="col-md-2">
+      <label>
+        <b>Claim Number:</b>
+      </label>
     </div>
+    <div class="col-md-4">
+      <input id="input" type="text" size="50" pInputText [(ngModel)]="text5" placeholder="Claim Number">
+    </div>
+    <div class="col-md-2">
+      <label>
+        <b>Claim Type:</b>
+      </label>
+    </div>
+    <div class="col-md-2">
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="text6" placeholder="Claim Type">
+    </div>
+    <div class="col-md-2">
+      <button pButton type="button" label="Search"></button>
+    </div>
+  </div>
 </div>
 <br/>
 <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
   <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
   <input #gb type="text" pInputText size="30" placeholder="Serach Text">
+</div>
+<div>
+    <h3>Custom</h3>
+    <p-progressSpinner [style]="{width: '20px', height: '20px'}" strokeWidth="8" fill="#1d69e4"  animationDuration="10s"></p-progressSpinner>
+   
 </div>
 <div class="content-section implementation">
   <p-dataTable [value]="claimants" expandableRows="true" [rows]="5" [totalRecords]="30" [paginator]="true" [rowsPerPageOptions]="[5,10,20]"
@@ -37,10 +80,10 @@
     <p-column field="ClaimantID" header="ClaimantID" [sortable]="true"></p-column>
     <p-column field="FirstName" header="FirstName" [sortable]="true"></p-column>
     <p-column field="LastName" header="LastName" [sortable]="true"></p-column>
-    <ng-template let-car pTemplate="rowexpansion" let-rowData  >
+    <ng-template let-car pTemplate="rowexpansion" let-rowData>
       <div class="ui-grid ui-grid-responsive ui-fluid" style="font-size:16px;padding:20px">
         <div class="ui-grid-row">
-         <claim-details [rowdt]="rowData" (onSelectClaim)='getClaimantID($event)'></claim-details>
+          <claim-details [rowdt]="rowData"></claim-details>
         </div>
       </div>
     </ng-template>

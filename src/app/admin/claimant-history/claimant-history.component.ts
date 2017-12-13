@@ -11,7 +11,7 @@ export class ClaimantHistoryComponent implements OnInit {
 
   cols: any[];
 
-  selectedCar: ClaimantHistory;
+  selectedClaim: ClaimantHistory;
 
   dialogVisible: boolean;
 
@@ -40,8 +40,5 @@ export class ClaimantHistoryComponent implements OnInit {
     this.message.changeMessage("Claimant History");
 
  }
- getClaimantID(claimId:number){
-  debugger;
-} 
-
+ 
 }
