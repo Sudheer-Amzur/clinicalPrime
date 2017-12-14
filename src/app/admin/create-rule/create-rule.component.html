@@ -1,103 +1,180 @@
 <div class="ui-steps">
-  <p-steps [model]="items" styleClass="steps-custom" [(activeIndex)]="activeIndex" [readonly]="true" ></p-steps>
-  
+  <p-steps [model]="items" styleClass="steps-custom" [(activeIndex)]="activeIndex" [readonly]="true"></p-steps>
+
 </div>
-<div *ngIf="ShowBasicInfo">
-  <h5 class="Sub-heading">Step1:Add Basic Info</h5>
-  <div class="row">
-    <div form name="myForm">
-    <div class="col-md-12">
-      <div class="col-md-2"> <label><b>Rule Name:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text" placeholder="Rule Name"></div>
-    </div>
+<form [formGroup]="rForm" (ngSubmit)="gotoStep1()">
 
-    <div class="col-md-12">
-      <div class="col-md-2"> <label>Rule Validity From:</label></div>
-      <div class="col-md-4  custom-input">
-        <p-calendar  [(ngModel)]="startDate" [monthNavigator]="true" name="startDate"  [yearNavigator]="true" yearRange="1800:2090"placeholder="mm-dd-yyyy" ></p-calendar>
-      </div>
-       <div class="col-md-2"> <label>Rule Validity To:</label></div>
-      <div class="col-md-4 custom-input">
-        <p-calendar [(ngModel)]="EndDate" [monthNavigator]="true"  [yearNavigator]="true" yearRange="1800:2090" placeholder="mm-dd-yyyy"></p-calendar>
-      </div>
-      
-    </div>
-    <div class="col-md-12">
-      <div class="col-md-2"><label><b>Rule Code:</b></label></div>
-      <div class="col-md-4"><input id="input" type="text" size="50" pInputText [(ngModel)]="text1" placeholder="Rule Code"></div>
-      <div class="col-md-2"><label><b>Group Name:</b></label></div>
-      <div class="col-md-4"> <input id="input" type="text" size="50" pInputText [(ngModel)]="text2" placeholder="Group Name"></div>
-    </div>
-    <div class="col-md-12">
-       <div class="col-md-2">
-      <p-inputSwitch onLabel="Active" offLabel="In-Active" [(ngModel)]="checked2"></p-inputSwitch>
-      </div>
-    </div>
-     <div class="row"></div>
-    <p-footer>
-      <div class="ui-dialog-buttonpane ui-helper-clearfix">
-        <button type="button" style="float:right" pButton icon="fa-close" (click)="  GotoRulelistPage()" label="Cancel"></button>
-        <button type="button" style="float:right" pButton icon="fa fa-chevron-right" (click)="gotoStep1()"label="Next"></button>
+  <div *ngIf="ShowBasicInfo">
+    <h5 class="Sub-heading">Step1:Add Basic Info</h5>
+    <div class="row">
+      <div form name="myForm">
+        <div class="col-md-12">
+          <div class="col-md-2">
+            <label>
+              <b>Rule Name:</b>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <input id="input" type="text" size="50" pInputText formControlName="RuleName" placeholder="Rule Name">
+          </div>
+          <div class="Error" *ngIf="!rForm.controls['RuleName'].valid && rForm.controls['RuleName'].touched">RuleName is Required</div>
 
+        </div>
+
+        <div class="col-md-12">
+          <div class="col-md-2">
+            <label>Rule Validity From:</label>
+          </div>
+          <div class="col-md-4  custom-input">
+            <p-calendar formControlName="startDate" [monthNavigator]="true" name="startDate" [yearNavigator]="true" yearRange="1800:2090"
+              placeholder="mm-dd-yyyy"></p-calendar>
+          </div>
+          <div class="Error" *ngIf="!rForm.controls['startDate'].valid && rForm.controls['startDate'].touched">startDate is Required</div>
+
+          <div class="col-md-2">
+            <label>Rule Validity To:</label>
+          </div>
+          <div class="col-md-4 custom-input">
+            <p-calendar formControlName="EndDate" [monthNavigator]="true" [yearNavigator]="true" yearRange="1800:2090" placeholder="mm-dd-yyyy"></p-calendar>
+          </div>
+          <!-- <div class="Error" *ngIf="!rForm.controls['EndDate'].valid && rForm.controls['EndDate'].touched">EndDate is Required</div> -->
+
+
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-2">
+            <label>
+              <b>Rule Code:</b>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <input id="input" type="text" size="50" pInputText formControlName="RuleCode" placeholder="Rule Code">
+          </div>
+          <div class="Error" *ngIf="!rForm.controls['RuleCode'].valid && rForm.controls['RuleCode'].touched">RuleCode is Required</div>
+          <div class="col-md-2">
+            <label>
+              <b>Group Name:</b>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <input id="input" type="text" size="50" pInputText formControlName="GroupName" placeholder="Group Name">
+          </div>
+          <div class="Error" *ngIf="!rForm.controls['GroupName'].valid && rForm.controls['GroupName'].touched">GroupName is Required</div>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-2">
+            <p-inputSwitch onLabel="Active" offLabel="In-Active" formControlName="checked2"></p-inputSwitch>
+          </div>
+        </div>
+        <div class="row"></div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" style="float:right" pButton icon="fa-close" (click)="  GotoRulelistPage()" label="Cancel"></button>
+            <button type="submit" style="float:right" pButton icon="fa fa-chevron-right" [disabled]="!rForm.valid"  label="Next"></button>
+
+          </div>
+        </p-footer>
       </div>
-    </p-footer>
+    </div>
   </div>
-</div>
-</div>
-<div *ngIf="showParameterInfo">
-  <div>
-    <h5 class="Sub-heading">Step2:Rule Parameter step</h5>
-  </div>
-  <div>
+</form>
+<form [formGroup]="pValueform" (ngSubmit)="gotoStep2()">
+  <div *ngIf="showParameterInfo">
     <div>
-      <p-dropdown [options]="Rules" [(ngModel)]="selectedCar" [style]="{'width':'150px'}" editable="true" placeholder="---Select Parameter---"></p-dropdown>
-
-      <p-dropdown [options]="Rules" [(ngModel)]="selectedCar" [style]="{'width':'150px'}" editable="true" placeholder="--- Select Operator---"></p-dropdown>
-      <button type="button" pButton (click)="Add()" label="Add"></button>
+      <h5 class="Sub-heading">Step2:Rule Parameter step</h5>
     </div>
-    <h5 class="Sub-heading">Assign Work flow</h5>
-    <div>
-      <div>
-        <p-dropdown [options]="Rules" [(ngModel)]="selectedCar" [style]="{'width':'150px'}" editable="true" placeholder="---SelectWork flow---"></p-dropdown>
+    <div formArrayName="valuelist">
+
+      <div class="row" *ngFor="let vslues of valuelist.controls let i=index" [formGroupName]="i">
+        <div class="col-md-2">
+          <p-dropdown [options]="countries" formControlName="selectContry" [style]="{'width':'150px'}" editable="true" optionLabel="Name"
+            placeholder="---Select Parameter---">
+
+          </p-dropdown>
+        </div>
+        <div class="col-md-2">
+          <p-dropdown [options]="States" formControlName="selectedState" [style]="{'width':'150px'}" editable="true" optionLabel="Name"
+            placeholder="--- Select Operator---"></p-dropdown>
+        </div>
+        <div class="col-md-3" *ngIf="vslues.controls.selectContry.value">
+          <p-spinner size="30" formControlName="txtvalues"></p-spinner>
+        </div>
+        <div class="col-md-5">
+          <button type="button" pButton icon="fa-close" (click)="removeparm(i)" *ngIf="valuelist.controls.length>1" label="Remove"></button>
+          <button type="button" pButton (click)="AddParmetervalue(i)" [disabled]="!vslues.controls.selectContry.value" label="Add"></button>
+        </div>
       </div>
+    </div>
+    <br/>
+    <h5 class="col-md-2" class="Sub-heading">Assign Work flow</h5>
+    <div>
+      <div class="col-md-3">
+        <p-dropdown [options]="workflow" formControlName="workflow" [style]="{'width':'150px'}" editable="true" optionLabel="Name" placeholder="---SelectWork flow---"></p-dropdown>
+      </div>
+
       <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
           <button type="button" style="float:right" pButton icon="fa-close" (click)=" GotoRulelistPage()" label="Delete"></button>
-          <button type="button" style="float:right" pButton icon="fa fa-chevron-right" (click)="gotoStep2()" label="Next"></button>
+          <button type="submit" style="float:right" pButton icon="fa fa-chevron-right" [disabled]="!pValueform.valid" label="Next"></button>
           <button type="button" style="float:right" pButton icon="fa fa-chevron-left" (click)="gotostep0()" label="Previous"></button>
-           
+
         </div>
 
       </p-footer>
     </div>
 
+
   </div>
-</div>
+</form>
 <div *ngIf="showPrevieInfo">
   <div row>
     <h5 class="Sub-heading">Step3:Preview & Finish</h5>
-    <div class="col-md-4"> <label><b>Rule Name:</b></label>{{text}}
+    <div class="col-md-4">
+      <label>
+        <b>Rule Name:</b>
+      </label>{{ rForm.controls['RuleName'].value}}
     </div>
-    <div class="col-md-4"><label><b>Rule Start Date:</b></label>{{startDate|date}}
+    <div class="col-md-4">
+      <label>
+        <b>Rule Start Date:</b>
+      </label>{{rForm.controls['startDate'].value|date}}
     </div>
-    <div class="col-md-"><label><b>Rule End Date:</b></label>{{EndDate|date}}
+    <div class="col-md-">
+      <label>
+        <b>Rule End Date:</b>
+      </label>{{rForm.controls['EndDate'].value|date}}
     </div>
-    <div class="col-md-4"><label><b>Rule Code:</b></label>{{text1}}
+    <div class="col-md-4">
+      <label>
+        <b>Rule Code:</b>
+      </label>{{rForm.controls['RuleCode'].value}}
     </div>
-    <div class="col-md-4"><label><b>Group:</b></label>{{text2}}
+    <div class="col-md-4">
+      <label>
+        <b>Group:</b>
+      </label>{{rForm.controls['GroupName'].value}}
     </div>
-    <div class="col-md-4"><label><b>Status:</b></label>{{checked2}}
+    <div class="col-md-4">
+      <label>
+        <b>Status:</b>
+      </label>{{rForm.controls['checked2'].value}}
     </div>
   </div>
+
+  <div class="col-md-12" style="background-color:aliceblue" *ngIf="pValueform.controls.valuelist.controls[0].controls.selectContry.value.Name" > 
+    <div class="panel-manual-info" *ngFor="let v of pValueform.controls.valuelist.controls">
+      <b>{{v.controls.selectContry.value.Name}}</b> - {{v.controls.selectedState.value.Name}} - {{v.controls.txtvalues.value}}
+      <br/>
+    </div>
+ </div>
+ <div *ngIf="pValueform.controls['workflow'].value.Name"><label>workflow:</label>{{pValueform.controls['workflow'].value.Name}}
+ </div>
   <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <p-growl [(value)]="msgs"></p-growl>
     <button type="button" style="float:right" pButton icon="fa-close" (click)=" GotoRulelistPage()" label="Delete"></button>
-    <button type="button" style="float:right" pButton icon="fa-check" (click)="gotoStep()" label="Save"></button>
+    <button type="button" style="float:right" pButton icon="fa-check" (click)=" showSuccess()" label="Save"></button>
     <button type="button" style="float:right" pButton icon="fa fa-chevron-left" (click)="gotoStep1()" label="Previous"></button>
+
   </div>
 
 </div>
-
-
-
-
-

@@ -15,12 +15,15 @@ import {InputTextModule} from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
 import { CarrierRuleConfigComponent } from './carrier-rule-config/carrier-rule-config.component';
 import { CreateRuleComponent } from './create-rule/create-rule.component'; 
-
+import {SpinnerModule} from 'primeng/primeng';
+import {GrowlModule} from 'primeng/primeng';
+import {Message} from 'primeng/components/common/api';
+import {MessagesModule} from 'primeng/primeng';
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,
-    DialogModule,DropdownModule,StepsModule,AccordionModule,CalendarModule,InputSwitchModule
+    DialogModule,DropdownModule,StepsModule,AccordionModule,CalendarModule,InputSwitchModule,SpinnerModule,GrowlModule,MessagesModule
   ],
   declarations: [RuleListComponent, CarrierRuleConfigComponent, CreateRuleComponent],
   exports:[RuleListComponent]

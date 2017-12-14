@@ -1,9 +1,11 @@
 export interface RuleList {
         
-    year;
-    brand;
-    color;
-    Name;
-    RullNo;
+   RuleCode;
+    RuleName;
+    StartDate;
+    EndDate;
+    GroupName;
+    RuleConditions;
+    Status;
 }
 

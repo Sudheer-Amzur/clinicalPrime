@@ -6,29 +6,29 @@
 
  <p-dataTable [value]="Rules"  [rows]="10"[totalRecords]="30" [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [globalFilter]="gb" #dt sortMode="multiple"selectionMode="single" [(selection)]="selectedEmployee" (onRowSelect)="onRowSelect($event)" [responsive]="true" >
                                                                     
-  <p-column field="RullNo" header="RullNo" [sortable]="true"></p-column>    
-  <p-column field="Name" header="Name" [sortable]="true"></p-column>
-  <p-column field="year" header="Year"[sortable]="true"></p-column>
-  <p-column field="brand" header="Brand"[sortable]="true"></p-column>
-  <p-column field="color" header="Color"[sortable]="true">
-    <ng-template let-col  let-Rules="rowData" pTemplate="body">
+  <p-column field="RuleCode" header="Rule Code" [sortable]="true"></p-column>    
+  <p-column field="RuleName" header=" Rule Name" [sortable]="true"></p-column>
+  <p-column field="StartDate" header="Start Date"[sortable]="true"></p-column>
+  <p-column field="EndDate" header="End Date"[sortable]="true"></p-column>
+  <p-column field="GroupName" header="Group Name"[sortable]="true">
+    <!-- <ng-template let-col  let-Rules="rowData" pTemplate="body">
           <span [style.color]="Rules[col.field]">{{Rules[col.field]}}</span>
-    </ng-template>
+    </ng-template> -->
   </p-column>
-   
+   <p-column field="RuleConditions" header="Rule Conditions" [sortable]="true"></p-column>
   <p-header>
     <div class="ui-helper-clearfix" style="width:100%">
    <button type="submit" pButton icon="fa-plus" style="float:left" (click)="GotoRulesConfiguration()" label="Add New Rule"></button>
    <button type="Button" pButton icon="" style="float:left"  (click)="exportToExcel()" label="Export to excel"></button>
   </div>
   </p-header>  
- 
+    
     <p-column field="Rule Edit" header="Rule Edit"> 
       <!-- </ng-template>  -->
        <ng-template let-Rules="rowData" pTemplate="body">
-          <button type="button" pButton  (click)="(Rules)" label="Edit" icon="fa-Edit"></button>
+          <button type="button" pButton  (click)="GotoRulesConfiguration()" label="Edit" icon="fa-Edit" ></button>
       </ng-template>
- </p-column>  -->
+ </p-column> 
 </p-dataTable>
 
  <!-- <p-dialog header="Rules Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">  
