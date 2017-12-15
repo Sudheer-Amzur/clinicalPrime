@@ -19,11 +19,14 @@ import {SpinnerModule} from 'primeng/primeng';
 import {GrowlModule} from 'primeng/primeng';
 import {Message} from 'primeng/components/common/api';
 import {MessagesModule} from 'primeng/primeng';
+import {ProgressSpinnerModule} from 'primeng/primeng';
+import { Ng4LoadingSpinnerModule, Ng4LoadingSpinnerService  } from 'ng4-loading-spinner';
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,
-    DialogModule,DropdownModule,StepsModule,AccordionModule,CalendarModule,InputSwitchModule,SpinnerModule,GrowlModule,MessagesModule
+    DialogModule,DropdownModule,StepsModule,AccordionModule,CalendarModule,InputSwitchModule,SpinnerModule,GrowlModule,MessagesModule,ProgressSpinnerModule
+    ,Ng4LoadingSpinnerModule 
   ],
   declarations: [RuleListComponent, CarrierRuleConfigComponent, CreateRuleComponent],
   exports:[RuleListComponent]
