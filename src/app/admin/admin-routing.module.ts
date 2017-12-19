@@ -7,6 +7,7 @@ import {ClaimantHistoryComponent} from './claimant-history/claimant-history.comp
 import { MonitoringMetricsComponent } from './monitoring-metrics/monitoring-metrics.component';
  
  import { CreateRuleComponent } from './create-rule/create-rule.component';
+ import {D3graphComponent} from './d3graph/d3graph.component'
 
 const routes: Routes = [
   {path:'rule-list',component:RuleListComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'TWC',component:TurnOnOffWatcherComponent},
   {path:'claimant-history',component:ClaimantHistoryComponent},  
   { path: 'create-rule', component: CreateRuleComponent },
-  { path: 'Mmetrics', component: MonitoringMetricsComponent }
+  { path: 'Mmetrics', component: MonitoringMetricsComponent },
+  {path:'D3Graph',component:D3graphComponent}
   
 ];
 

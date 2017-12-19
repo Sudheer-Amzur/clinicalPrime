@@ -1,0 +1,40 @@
+.chart >>> div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+    
+  }
+
+  .chart >>> svg {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+  }
+
+  .chart >>> rect {
+    fill: steelblue;
+  }
+  
+  .chart >>> text {
+    fill: saddlebrown;
+    font: 10px sans-serif;
+    text-anchor: middle;
+  }
+
+  .bar {
+    fill: steelblue;
+  }
+  
+  .bar:hover {
+    fill: brown;
+  }
+  
+  .axis--x path {
+    display: none;
+  }

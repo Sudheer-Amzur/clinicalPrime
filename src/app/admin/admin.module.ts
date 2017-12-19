@@ -22,15 +22,18 @@ import { ClaimantHistoryComponent } from './claimant-history/claimant-history.co
 import { ClaimDetailsComponent } from './claim-details/claim-details.component'; 
 import { CreateRuleComponent } from './create-rule/create-rule.component'; 
 import { MultiSelectModule } from 'primeng/primeng';
-import { MonitoringMetricsComponent } from './monitoring-metrics/monitoring-metrics.component'; 
+import { MonitoringMetricsComponent } from './monitoring-metrics/monitoring-metrics.component';
+import { D3graphComponent } from './d3graph/d3graph.component'; 
+import { D3Service } from 'd3-ng2-service';
 @NgModule({
   imports: [
     CommonModule,FormsModule,ReactiveFormsModule,
     AdminRoutingModule,PaginatorModule,DataTableModule,SharedModule,ButtonModule,InputTextModule,DialogModule,DropdownModule,InputSwitchModule
       , StepsModule, AccordionModule, CalendarModule, InputSwitchModule, MultiSelectModule, ChartModule
   ],
-  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, CreateRuleComponent, ClaimantHistoryComponent, ClaimDetailsComponent, MonitoringMetricsComponent],
-  exports:[RuleListComponent]
+  declarations: [RuleListComponent, CarrierRuleConfigComponent, TurnOnOffWatcherComponent, CreateRuleComponent, ClaimantHistoryComponent, ClaimDetailsComponent, MonitoringMetricsComponent, D3graphComponent],
+  exports:[RuleListComponent],
+  providers:[D3Service]
  
 })
 export class AdminModule { }

@@ -6,7 +6,8 @@ const routes: Routes = [
   {path:'CRC',redirectTo:'CRC'},
   {path:'TWC',redirectTo:'TWC'},
   { path: 'create-rule', redirectTo: 'create-rule' },
-  { path: 'Mmetrics', redirectTo: 'Mmetrics' }
+  { path: 'Mmetrics', redirectTo: 'Mmetrics' },
+  {path:'D3Graph',redirectTo:'D3Graph'}
 ];
 
 @NgModule({
